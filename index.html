@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Database</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="database.json"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <link rel="stylesheet" href="CSS/style.css">
+
+    </head>
+    <body>
+        <div class="jumbotron img-dragon">
+            <h1>Vue JS et JSON</h1>
+            <p>Récupération et affichage des données avec composant</p>
+        </div>
+        <div class="container">
+
+            <div id="content">
+                <input type="text" v-model="search" placeholder="Chercher un nom">
+                <table class="table table-dark">
+                    <thead>
+                      <tr>
+                        <th scope="col" v-for="titre in titres">{{titre.toUpperCase()}}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="adherent in filtreNom">
+                            <td>{{adherent.name}}</td>
+                            <td>{{adherent.company}}</td>
+                            <td>{{adherent.age}} ans</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <script type="text/javascript" src="JS/script.js"></script>
+    </body>
+</html>
